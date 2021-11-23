@@ -9,6 +9,8 @@ namespace Tekus.Core.Application.DI
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {       
             services.AddScoped<ICountryAppService, CountryAppService>();
+            services.AddScoped<IServiceAppService, ServiceAppService>();
+
             return services;
         }
     }

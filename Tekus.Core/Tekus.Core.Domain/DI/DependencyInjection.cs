@@ -10,7 +10,8 @@ namespace Tekus.Core.Domain.DI
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
             services.AddScoped<ICountryDomainService, CountryDomainService>();
-         
+            services.AddScoped<IServiceDomainService, ServiceDomainService>();
+
             return services;
         }
     }

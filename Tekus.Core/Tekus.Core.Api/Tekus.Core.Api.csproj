@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tekus.Core.Application\Tekus.Core.Application.csproj" />
+    <ProjectReference Include="..\Tekus.Core.Infrastructure\Tekus.Core.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

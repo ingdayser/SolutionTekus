@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Entities;
 
-namespace Tekus.Core.Domain.ServiceContracts
+namespace Tekus.Core.Domain.ServicesContracts
 {
     public interface IServiceDomainService
     {
@@ -11,6 +11,6 @@ namespace Tekus.Core.Domain.ServiceContracts
         Task<Service> UpdateAsync(Service service);
         Task<Service> GetByIdAsync(Guid id);
         Task<List<Service>> GetAllAsync();
-        Task<bool> DeleteAsync();
+       
     }
 }

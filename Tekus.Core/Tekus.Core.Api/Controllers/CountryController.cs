@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tekus.Core.Application.DTO.Out;
 using Tekus.Core.Application.Helpers;
-using Tekus.Core.Application.ServiceContracts;
+using Tekus.Core.Application.ServicesContracts;
 
 namespace Tekus.Core.WebApi.Controllers
 {

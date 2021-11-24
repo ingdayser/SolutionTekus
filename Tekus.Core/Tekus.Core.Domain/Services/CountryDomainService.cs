@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tekus.Core.Domain.Contrats;
 using Tekus.Core.Domain.Entities;
 using Tekus.Core.Domain.Entities.Config;
-using Tekus.Core.Domain.ServiceAgentContrats;
-using Tekus.Core.Domain.ServiceContracts;
+using Tekus.Core.Domain.ServicesContracts;
 
 namespace Tekus.Core.Domain.Services
 {

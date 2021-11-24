@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Tekus.Core.Domain.ServiceAgentContrats;
-using Tekus.Core.Domain.ServiceContracts;
 using Tekus.Core.Domain.Services;
+using Tekus.Core.Domain.ServicesContracts;
 
 namespace Tekus.Core.Domain.DI
 {
@@ -11,7 +10,7 @@ namespace Tekus.Core.Domain.DI
         {
             services.AddScoped<ICountryDomainService, CountryDomainService>();
             services.AddScoped<IServiceDomainService, ServiceDomainService>();
-
+            services.AddScoped<IProviderDomainService, ProviderDomainService>();
             return services;
         }
     }

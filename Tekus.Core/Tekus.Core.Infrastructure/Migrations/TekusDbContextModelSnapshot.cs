@@ -164,7 +164,7 @@ namespace Tekus.Core.Infrastructure.Migrations
                     b.Navigation("ServiceNavigation");
                 });
 
-            modelBuilder.Entity("Tekus.Core.Domain.Entities.Provider", b.=>
+            modelBuilder.Entity("Tekus.Core.Domain.Entities.Provider", b=>
                 {
                     b.Navigation("CustomAttributes");
 
@@ -175,7 +175,7 @@ namespace Tekus.Core.Infrastructure.Migrations
                 {
                     b.Navigation("ServiceProviders");
                 });
-            modelBuilder.Entity<>"Tekus.Core.Domain.Entities.Service", b =>
+            modelBuilder.Entity("Tekus.Core.Domain.Entities.Service", b =>
             {
                 b.Navigation("ServiceProviders");
             });

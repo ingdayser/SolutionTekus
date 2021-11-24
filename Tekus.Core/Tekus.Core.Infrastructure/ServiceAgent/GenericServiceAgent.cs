@@ -1,10 +1,9 @@
-﻿using Domain.Services;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Contrats;
-using Tekus.Core.Domain.ServiceAgentContrats;
+using Tekus.Core.Domain.Services;
 using Tekus.Core.Infrastructure.Helper;
 
 namespace Tekus.Core.Infrastructure.ServiceAgent

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Tekus.Core.Application.Dto.In;
+using Tekus.Core.Application.DTO.In;
 using Tekus.Core.Application.DTO.Out;
 using Tekus.Core.Domain.Entities;
 
@@ -29,6 +29,25 @@ namespace Application.Mapper
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Identifier))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.NameServiceDto))
                 .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.HourValueDto)).ReverseMap();
+            #endregion
+
+            #region Provider
+            CreateMap<ProviderDto, Provider>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Identifier))
+                .ForMember(dest => dest.Nit, opt => opt.MapFrom(src => src.Nit))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.NameProvider))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.EmailProvider))
+                .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.AddressProvider))
+                .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.PhoneProvider)).ReverseMap();
+            #endregion
+
+            #region CustomAttribute
+
+            CreateMap<AttributeDto, CustomAttribute>()              
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.NameAttribute))
+                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.TypeAttribute))
+                .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.ValueAttribute)).ReverseMap();
+
             #endregion
 
         }

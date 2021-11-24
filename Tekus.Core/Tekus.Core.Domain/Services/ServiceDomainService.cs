@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Contracts;
 using Tekus.Core.Domain.Entities;
-using Tekus.Core.Domain.ServiceContracts;
+using Tekus.Core.Domain.ServicesContracts;
 
 namespace Tekus.Core.Domain.Services
 {
@@ -25,9 +25,13 @@ namespace Tekus.Core.Domain.Services
         #endregion
 
         #region Methods
-        public Task<Service> CreateAsync(Service service)
+        public async Task<Service> CreateAsync(Service service)
         {
-            throw new NotImplementedException();
+            service.Id = Guid.NewGuid();
+            service.CreaterAt = DateTime.Now;
+            Service response = await _serviceRepository.InsertAsync(service);
+            _serviceRepository.Save();
+            return response;
         }
 
         public Task<bool> DeleteAsync()
@@ -37,13 +41,13 @@ namespace Tekus.Core.Domain.Services
 
         public async Task<List<Service>> GetAllAsync()
         {
-            return await _serviceRepository.GetAll();
+            return await _serviceRepository.GetAllAsync();
 
         }
 
-        public Task<Service> GetByIdAsync(Guid id)
+        public async Task<Service> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _serviceRepository.GetByIdAsync(id);
         }
 
         public Task<Service> UpdateAsync(Service service)

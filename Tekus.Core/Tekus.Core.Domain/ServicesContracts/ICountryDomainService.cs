@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Entities;
 
-namespace Tekus.Core.Domain.ServiceContracts
+namespace Tekus.Core.Domain.ServicesContracts
 {
     public interface ICountryDomainService
     {       

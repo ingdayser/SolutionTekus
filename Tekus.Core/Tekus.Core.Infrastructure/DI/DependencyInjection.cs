@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tekus.Core.Domain.Contracts;
+using Tekus.Core.Domain.Contrats;
 using Tekus.Core.Domain.Entities.Config;
-using Tekus.Core.Domain.ServiceAgentContrats;
 using Tekus.Core.Infrastructure.ServiceAgent;
 
 namespace Tekus.Core.Infrastructure.DI

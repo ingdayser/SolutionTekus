@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tekus.Core.Application.Dto.In
+namespace Tekus.Core.Application.DTO.In
 {
     public  class ServiceDto
     {

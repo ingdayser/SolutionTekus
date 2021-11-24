@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Tekus.Core.Application.ServiceContracts;
 using Tekus.Core.Application.Services;
+using Tekus.Core.Application.ServicesContracts;
 
 namespace Tekus.Core.Application.DI
 {
@@ -10,6 +10,7 @@ namespace Tekus.Core.Application.DI
         {       
             services.AddScoped<ICountryAppService, CountryAppService>();
             services.AddScoped<IServiceAppService, ServiceAppService>();
+            services.AddScoped<IProviderAppService, ProviderAppService>();
 
             return services;
         }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Tekus.Core.Application.DTO.Out;
 using Tekus.Core.Application.Helpers;
 
-namespace Tekus.Core.Application.ServiceContracts
+namespace Tekus.Core.Application.ServicesContracts
 {
     public interface ICountryAppService
     {  

@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tekus.Core.Application.Dto.In;
+using Tekus.Core.Api.Filter;
+using Tekus.Core.Application.DTO.In;
 using Tekus.Core.Application.Helpers;
-using Tekus.Core.Application.ServiceContracts;
+using Tekus.Core.Application.ServicesContracts;
 
 namespace WebApi.Controllers
 {
@@ -23,73 +25,20 @@ namespace WebApi.Controllers
             return await _serviceAppService.GetAllAsync();
         }
 
-        //// GET: ServiceController/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        // GET: Service/5
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<RequestResult<ServiceDto>> Details(Guid id)
+        {
+            return await _serviceAppService.GetByIdAsync(id);
+        }
 
-        //// GET: ServiceController/Create
-        //public ActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: ServiceController/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: ServiceController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: ServiceController/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //// GET: ServiceController/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: ServiceController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+        // POST: Service/
+        [HttpPost]
+        [TypeFilter(typeof(ValidationFilter))]
+        public async Task<RequestResult<ServiceDto>> Create([FromBody]ServiceDto serviceDto)
+        {
+          return await _serviceAppService.CreateAsync(serviceDto);
+        }     
     }
 }

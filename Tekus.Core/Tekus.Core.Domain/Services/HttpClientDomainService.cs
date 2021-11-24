@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Contrats;
 
-namespace Domain.Services
+namespace Tekus.Core.Domain.Services
 
 {
     public class HttpClientDomainService : IHttpClientDomainService

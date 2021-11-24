@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Tekus.Core.Domain.Contracts;
 using Tekus.Core.Infrastructure.DataAccess;
@@ -42,25 +43,30 @@ namespace Infrastructure.DataAccess
             _dbSet.Remove(entityToDelete);
         }
 
-        public async Task<List<TEntity>> GetAll()
+        public async Task<List<TEntity>> GetAllAsync()
         {
             return await _dbSet.ToListAsync();
         }
 
-        public TEntity GetByID(Guid id)
+        public async Task<TEntity> GetByIdAsync(Guid id)
         {
-            return _dbSet.Find(id);
+            return await _dbSet.FindAsync(id);
         }
 
-        public void Insert(TEntity entity)
+        public async Task<TEntity> InsertAsync(TEntity entity)
         {
-            _dbSet.Add(entity);
+            return (await _dbSet.AddAsync(entity)).Entity;            
         }
 
         public void Update(TEntity entityToUpdate)
         {
             _dbSet.Attach(entityToUpdate);
             _context.Entry(entityToUpdate).State = EntityState.Modified;
+        }
+
+        public bool Save()
+        {
+            return _context.SaveChanges()>0;
         }
 
         #endregion

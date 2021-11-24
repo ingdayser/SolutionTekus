@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,6 +16,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Tekus.Core.Application\Tekus.Core.Application.csproj" />
     <ProjectReference Include="..\Tekus.Core.Infrastructure\Tekus.Core.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Validation\Out\" />
   </ItemGroup>
 
 </Project>

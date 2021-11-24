@@ -22,7 +22,7 @@ namespace Tekus.Core.Application.Helpers
         internal RequestResult(bool isSuccessful, bool isError, IEnumerable<string> errorMessages, dynamic result)
         {
             IsSuccessful = isSuccessful;
-            IsError = IsError;
+            IsError = isError;
             ErrorMessages = errorMessages;
             Result = result;
         }

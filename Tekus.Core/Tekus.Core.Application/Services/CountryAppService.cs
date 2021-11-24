@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tekus.Core.Application.DTO.Out;
 using Tekus.Core.Application.Helpers;
-using Tekus.Core.Application.ServiceContracts;
+using Tekus.Core.Application.ServicesContracts;
 using Tekus.Core.Domain.Entities;
-using Tekus.Core.Domain.ServiceContracts;
+using Tekus.Core.Domain.ServicesContracts;
 
 namespace Tekus.Core.Application.Services
 {

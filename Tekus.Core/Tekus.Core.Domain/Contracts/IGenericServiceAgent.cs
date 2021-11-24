@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Tekus.Core.Domain.ServiceAgentContrats
+namespace Tekus.Core.Domain.Contrats
 {
     public interface IGenericServiceAgent
     {

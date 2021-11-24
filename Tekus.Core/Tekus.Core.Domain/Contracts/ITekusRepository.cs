@@ -6,12 +6,13 @@ namespace Tekus.Core.Domain.Contracts
 {
     public interface ITekusRepository<TEntity> where TEntity : class
     {
-        TEntity GetByID(Guid id);
-        Task<List<TEntity>> GetAll();
-        void Insert(TEntity entity);
+        Task<TEntity> GetByIdAsync(Guid id);
+        Task<List<TEntity>> GetAllAsync();
+        Task<TEntity> InsertAsync(TEntity entity);
         void Delete(Guid id);
         void Delete(TEntity entityToDelete);
         void Update(TEntity entityToUpdate);
+        public bool Save();
 
     }
 }
